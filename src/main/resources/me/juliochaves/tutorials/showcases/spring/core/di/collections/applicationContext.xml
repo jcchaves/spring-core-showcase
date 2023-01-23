@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans.xsd
+		   http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context.xsd">
+	<!-- Normal collection definition -->
+	<bean id="foo" class="me.juliochaves.tutorials.showcases.spring.core.di.collections.beans.Foo">
+		<property name="list">
+			<list>
+				<value>This is the first item!</value>
+				<value>This is the second item!</value>
+				<value>Guess what, this is the third item!</value>
+			</list>
+		</property>
+		<property name="map">
+			<map>
+				<entry key="first" value="The first entry"></entry>
+				<entry key="second" value="The second entry"></entry>
+				<entry key="third" value="Again, the third entry"></entry>
+			</map>
+		</property>
+		<property name="props">
+			<props>
+				<prop key="first">The first property</prop>
+				<prop key="second">The second property</prop>
+				<prop key="third">Don´t have to explain, but this is the third property
+				</prop>
+			</props>
+		</property>
+		<property name="set">
+			<set>
+				<value>This is the first item</value>
+				<value>This is the second item</value>
+				<value>Already know it, this is the third item</value>
+			</set>
+		</property>
+		<property name="strongTypedMap">
+			<map>
+				<entry key="onePointHalf" value="1.5" />
+				<entry key="twoPointSeven" value="2.7" />
+			</map>
+		</property>
+	</bean>
+	<!-- Collection merging -->
+	<bean id="fooParent" abstract="true"
+		class="me.juliochaves.tutorials.showcases.spring.core.di.collections.beans.Foo">
+		<property name="list">
+			<list>
+				<value>This is the first item!</value>
+				<value>This is the second item!</value>
+				<value>Guess what, this is the third item!</value>
+			</list>
+		</property>
+		<property name="map">
+			<map>
+				<entry key="first" value="The first entry"></entry>
+				<entry key="second" value="The second entry"></entry>
+				<entry key="third" value="Again, the third entry"></entry>
+			</map>
+		</property>
+		<property name="props">
+			<props>
+				<prop key="first">The first property</prop>
+				<prop key="second">The second property</prop>
+				<prop key="third">Don´t have to explain, but this is the third property
+				</prop>
+			</props>
+		</property>
+		<property name="set">
+			<set>
+				<value>This is the first item</value>
+				<value>This is the second item</value>
+				<value>Already know it, this is the third item</value>
+			</set>
+		</property>
+	</bean>
+
+	<bean id="fooChild" parent="fooParent">
+		<!-- Override -->
+		<property name="list">
+			<list>
+				<value>Wow, just one item here :O</value>
+			</list>
+		</property>
+		<!-- Merge and Override specific value -->
+		<property name="map">
+			<map merge="true">
+				<entry key="third" value="The child didn´t know it, but this is the third entry" />
+				<entry key="fourth" value="The child is eager to have it´s own fourth entry" />
+			</map>
+		</property>
+		<!-- Override specific value -->
+		<property name="props">
+			<props merge="true">
+				<prop key="third">This child doesn´t respect the older ones, it changed the third item</prop>
+			</props>
+		</property>
+		<!-- Merge -->
+		<property name="set">
+			<set merge="true">
+				<value>Yet another item, the fourth one</value>
+			</set>
+		</property>
+	</bean>
+</beans>

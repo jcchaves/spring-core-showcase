@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+         http://www.springframework.org/schema/beans/spring-beans.xsd
+         http://www.springframework.org/schema/context
+         http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<context:property-override
+		location="classpath:com/spring/tutorial/postprocessors/propertyoverride/app.properties" />
+		
+	<context:property-override
+		location="classpath:com/spring/tutorial/postprocessors/propertyoverride/app2.properties" />
+
+<!-- 	<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer"> -->
+<!-- 		<property name="locations" value="classpath:com/spring/tutorial/postprocessors/propertyoverride/app.properties" /> -->
+<!-- 	</bean> -->
+	
+<!-- 	<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer"> -->
+<!-- 		<property name="locations" value="classpath:com/spring/tutorial/postprocessors/propertyoverride/app2.properties" /> -->
+<!-- 	</bean> -->
+
+	<bean id="foo"
+		class="me.juliochaves.tutorials.showcases.spring.core.postprocessors.propertyoverride.beans.Foo">
+		<property name="bar" value="${foo.bar}" />
+		<property name="baz" value="${foo.baz}" />
+	</bean>
+
+</beans>

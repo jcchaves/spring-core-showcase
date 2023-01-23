@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans.xsd
+		   http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context.xsd">
+    <!-- p-namespace for a reference property with -ref suffix -->
+    <!-- p-namespace for a normal property -->
+	<bean id="foo" class="me.juliochaves.tutorials.showcases.spring.core.di.pnamespace.beans.Foo"
+		p:bar-ref="bar"
+		p:baz="This is a baz">
+	</bean>
+
+	<bean id="bar" class="me.juliochaves.tutorials.showcases.spring.core.di.pnamespace.beans.Bar"></bean>
+
+</beans>

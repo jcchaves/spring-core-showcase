@@ -1,0 +1,21 @@
+<!DOCTYPE aspectj PUBLIC
+        "-//AspectJ//DTD//EN" "http://www.eclipse.org/aspectj/dtd/aspectj.dtd">
+<aspectj>
+
+	<weaver options="-verbose -showWeaveInfo -debug">
+
+		<!-- only weave classes in our application-specific packages -->
+		<include within="com.spring.tutorial.di.cnamespace.beans.*" />
+		<include within="com.spring.tutorial.di.constructorbased.beans.dependent.*" />
+		<include within="com.spring.tutorial.di.factorymethodbased.beans.dependent.*" />
+		<include within="com.spring.tutorial.di.setterbased.beans.dependent.*" />
+		<include within="me.juliochaves.tutorials.showcases.spring.core.di.aspects.LoggingAspect" />
+	</weaver>
+
+	<aspects>
+		<!-- weave in just this aspect -->
+		<aspect name="me.juliochaves.tutorials.showcases.spring.core.di.aspects.LoggingAspect" />
+
+	</aspects>
+
+</aspectj>
