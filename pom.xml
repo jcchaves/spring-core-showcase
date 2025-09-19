@@ -37,7 +37,7 @@
         <commons-fileupload.version>1.2.2</commons-fileupload.version>
         <commons-io.version>2.14.0</commons-io.version>
         <org.apache.shiro.version>2.0.5</org.apache.shiro.version>
-        <org.codehaus.groovy.version>2.2.1</org.codehaus.groovy.version>
+        <org.codehaus.groovy.version>2.4.21</org.codehaus.groovy.version>
     </properties>
 
     <build>
