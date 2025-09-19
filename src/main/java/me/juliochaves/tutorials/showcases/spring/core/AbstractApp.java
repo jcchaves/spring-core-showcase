@@ -1,13 +1,13 @@
 package me.juliochaves.tutorials.showcases.spring.core;
 
 public abstract class AbstractApp {
-	protected Logger logger;
+	protected Log4jHandler logger;
 
-	public Logger getLogger() {
+	public Log4jHandler getLogger() {
 		return logger;
 	}
 
-	public void setLogger(Logger logger) {
+	public void setLogger(Log4jHandler logger) {
 		this.logger = logger;
 	}
 

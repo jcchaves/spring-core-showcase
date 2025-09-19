@@ -1,6 +1,6 @@
 package me.juliochaves.tutorials.showcases.spring.core.di.annotationbased.resource.beans;
 
-import javax.annotation.Resource;
+import jakarta.annotation.Resource;
 
 public class Foo {
 	private Baz baz;

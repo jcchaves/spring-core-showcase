@@ -1,7 +1,7 @@
 package me.juliochaves.tutorials.showcases.spring.core.di.lifecycle.postprocessor.beans;
 
-import javax.annotation.PostConstruct;
-import javax.annotation.PreDestroy;
+import jakarta.annotation.PostConstruct;
+import jakarta.annotation.PreDestroy;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
