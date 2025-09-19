@@ -17,7 +17,7 @@
         <javax.inject.version>1</javax.inject.version>
         <org.hibernate.version>4.2.7.Final</org.hibernate.version>
         <org.hibernate.hibernate-validator.version>4.3.0.Final</org.hibernate.hibernate-validator.version>
-        <com.h2database.version>2.1.210</com.h2database.version>
+        <com.h2database.version>2.2.220</com.h2database.version>
         <org.springframework.version>6.2.11</org.springframework.version>
         <org.springframework.security.version>6.5.5</org.springframework.security.version>
         <org.aspectj.version>1.7.4</org.aspectj.version>
