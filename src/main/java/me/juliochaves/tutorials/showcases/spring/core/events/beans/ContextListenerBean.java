@@ -10,6 +10,7 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
+import org.springframework.lang.NonNull;
 
 /**
  *
@@ -18,7 +19,7 @@ import org.springframework.context.event.ContextRefreshedEvent;
 public class ContextListenerBean implements ApplicationListener<ContextRefreshedEvent>{
     private final static Log LOGGER = LogFactory.getLog(ContextListenerBean.class);
     @Override
-    public void onApplicationEvent(ContextRefreshedEvent e) {
+    public void onApplicationEvent(@NonNull ContextRefreshedEvent e) {
         LOGGER.debug("Within contextListenerBean after the context has been initialized.");
     }
     

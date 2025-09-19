@@ -9,10 +9,10 @@
         <!--Maven project properties -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <!--Maven plugins properties -->
-        <maven.compiler.source>1.8</maven.compiler.source>
-        <maven.compiler.target>1.8</maven.compiler.target>
+        <maven.compiler.source>23</maven.compiler.source>
+        <maven.compiler.target>23</maven.compiler.target>
         <!--Dependencies properties -->
-        <java.version>1.8</java.version>
+        <java.version>23</java.version>
         <jakarta.annotation.version>3.0.0</jakarta.annotation.version>
         <javax.inject.version>1</javax.inject.version>
         <org.hibernate.version>4.2.7.Final</org.hibernate.version>

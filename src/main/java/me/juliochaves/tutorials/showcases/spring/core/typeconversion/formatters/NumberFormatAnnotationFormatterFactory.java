@@ -16,27 +16,31 @@ import java.util.HashSet;
 import java.util.Set;
 
 import static java.util.Arrays.asList;
+import org.springframework.lang.NonNull;
 
 public final class NumberFormatAnnotationFormatterFactory implements
         AnnotationFormatterFactory<NumberFormat> {
 
+    @NonNull
     public Set<Class<?>> getFieldTypes() {
-        return new HashSet<Class<?>>(asList(new Class<?>[]{Short.class,
+        return new HashSet<Class<?>>(asList(new Class<?>[] { Short.class,
                 Integer.class, Long.class, Float.class, Double.class,
-                BigDecimal.class, BigInteger.class}));
+                BigDecimal.class, BigInteger.class }));
     }
 
-    public Printer<Number> getPrinter(NumberFormat annotation,
-                                      Class<?> fieldType) {
+    @NonNull
+    public Printer<Number> getPrinter(@NonNull NumberFormat annotation,
+            @NonNull Class<?> fieldType) {
         return configureFormatterFrom(annotation, fieldType);
     }
 
-    public Parser<Number> getParser(NumberFormat annotation, Class<?> fieldType) {
+    @NonNull
+    public Parser<Number> getParser(@NonNull NumberFormat annotation, @NonNull Class<?> fieldType) {
         return configureFormatterFrom(annotation, fieldType);
     }
 
     private Formatter<Number> configureFormatterFrom(NumberFormat annotation,
-                                                     Class<?> fieldType) {
+            Class<?> fieldType) {
         if (!annotation.pattern().isEmpty()) {
             return new NumberStyleFormatter(annotation.pattern());
         } else {

@@ -18,8 +18,8 @@ public class App {
 
     public static void main(String[] args) {
         ApplicationContext ctx = new ClassPathXmlApplicationContext("me/juliochaves/tutorials/showcases/spring/core/configuration/beansconfig/hybrid/applicationContext.xml");
-        Foo foo = ctx.getBean(Foo.class);
-        Bar bar = ctx.getBean(Bar.class);
+        ctx.getBean(Foo.class);
+        ctx.getBean(Bar.class);
         ((ClassPathXmlApplicationContext) ctx).close();
     }
 }

@@ -10,7 +10,7 @@ public class App {
 		((AnnotationConfigApplicationContext) ctx)
 				.scan("com.spring.tutorial.configuration.componentscan.config");
 		((AnnotationConfigApplicationContext) ctx).refresh();
-		Foo foo = ctx.getBean(Foo.class);
+		ctx.getBean(Foo.class);
 		((AnnotationConfigApplicationContext) ctx).close();
 	}
 }

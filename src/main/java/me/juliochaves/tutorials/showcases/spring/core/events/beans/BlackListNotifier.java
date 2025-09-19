@@ -3,6 +3,7 @@ package me.juliochaves.tutorials.showcases.spring.core.events.beans;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.context.ApplicationListener;
+import org.springframework.lang.NonNull;
 
 public class BlackListNotifier implements ApplicationListener<BlackListEvent> {
 	
@@ -14,7 +15,7 @@ public class BlackListNotifier implements ApplicationListener<BlackListEvent> {
 		this.notificationAddress = notificationAddress;
 	}
 
-	public void onApplicationEvent(BlackListEvent event) {
+	public void onApplicationEvent(@NonNull BlackListEvent event) {
 		// notify appropriate parties via notificationAddress...
 		LOGGER.info("On BlackListEvent");
 	}

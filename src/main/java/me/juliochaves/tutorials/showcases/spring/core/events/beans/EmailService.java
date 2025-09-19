@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.context.ApplicationEventPublisherAware;
+import org.springframework.lang.NonNull;
 
 public class EmailService implements ApplicationEventPublisherAware {
 
@@ -15,7 +16,7 @@ public class EmailService implements ApplicationEventPublisherAware {
 		this.blackList = blackList;
 	}
 
-	public void setApplicationEventPublisher(ApplicationEventPublisher publisher) {
+	public void setApplicationEventPublisher(@NonNull ApplicationEventPublisher publisher) {
 		this.publisher = publisher;
 	}
 

@@ -18,7 +18,7 @@ public class App {
 
     public static void main(String[] args) {
         ApplicationContext ctx = new AnnotationConfigApplicationContext(AppConfig.class);
-        Foo foo = ctx.getBean(Foo.class);
+        ctx.getBean(Foo.class);
         ((AnnotationConfigApplicationContext) ctx).close();
     }
 }

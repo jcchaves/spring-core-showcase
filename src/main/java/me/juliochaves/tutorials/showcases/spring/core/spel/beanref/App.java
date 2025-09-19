@@ -8,6 +8,7 @@ import org.springframework.expression.EvaluationContext;
 import org.springframework.expression.ExpressionParser;
 import org.springframework.expression.spel.standard.SpelExpressionParser;
 import org.springframework.expression.spel.support.StandardEvaluationContext;
+import org.springframework.lang.NonNull;
 
 import me.juliochaves.tutorials.showcases.spring.core.spel.beans.Inventor;
 
@@ -20,7 +21,7 @@ public class App {
 		context.setBeanResolver(new BeanResolver() {
 
 			@Override
-			public Object resolve(EvaluationContext context, String beanName)
+			public Object resolve(@NonNull EvaluationContext context, @NonNull String beanName)
 					throws AccessException {
 				if ("einstein".equals(beanName))
 					return new Inventor("", "");

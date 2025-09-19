@@ -7,6 +7,8 @@ import java.util.Date;
 import java.util.Locale;
 
 import org.springframework.format.Formatter;
+import org.springframework.lang.NonNull;
+import org.springframework.lang.Nullable;
 
 public class DateFormatter implements Formatter<Date> {
 	private String pattern;
@@ -15,14 +17,16 @@ public class DateFormatter implements Formatter<Date> {
 		this.pattern = pattern;
 	}
 
-	public String print(Date date, Locale locale) {
+	@NonNull
+	public String print(@Nullable Date date, @NonNull Locale locale) {
 		if (date == null) {
 			return "";
 		}
 		return getDateFormat(locale).format(date);
 	}
 
-	public Date parse(String formatted, Locale locale) throws ParseException {
+	@Nullable
+	public Date parse(@NonNull String formatted, @NonNull Locale locale) throws ParseException {
 		if (formatted.length() == 0) {
 			return null;
 		}
